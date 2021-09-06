@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Person;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,6 +18,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        Person::factory(30)->create();
+
+
+
         // \App\Models\User::factory(10)->create();
         $user = new User();
         $user->name = 'Shahriar Islam';
