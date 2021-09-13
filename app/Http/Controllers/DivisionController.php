@@ -7,14 +7,11 @@ use Illuminate\Http\Request;
 
 class DivisionController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $divisions = Division::paginate();
+
+        return view('divisions.index', compact('divisions'));
     }
 
     /**
@@ -81,5 +78,13 @@ class DivisionController extends Controller
     public function destroy(Division $division)
     {
         //
+    }
+
+    public function enableDisable($id){
+        $division = Division::findOrFail($id);
+        $division->enabled = !$division->enabled;
+        $division->save();
+
+        return redirect()->route('divisions.index')->with('message', $division->name. ' Division updated');
     }
 }
