@@ -7,14 +7,10 @@ use Illuminate\Http\Request;
 
 class UpazilaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $upazilas = Upazila::paginate();
+        return view('upazilas.index', ['upazilas' => $upazilas]);
     }
 
     /**

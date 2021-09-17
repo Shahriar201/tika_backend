@@ -7,14 +7,10 @@ use Illuminate\Http\Request;
 
 class VaccinationCenterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $vaccinationCenters = VaccinationCenter::paginate();
+        return view('vaccination-centers.index', ['vaccinationCenters' => $vaccinationCenters]);
     }
 
     /**

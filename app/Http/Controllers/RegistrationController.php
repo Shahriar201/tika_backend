@@ -7,14 +7,10 @@ use Illuminate\Http\Request;
 
 class RegistrationController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $registrations = Registration::paginate();
+        return view('registrations.index', ['registrations' => $registrations]);
     }
 
     /**
