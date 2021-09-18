@@ -33,6 +33,10 @@ Route::middleware(['auth', 'verified'])->group(function(){
     Route::resource('/vaccination-centers', VaccinationCenterController::class);
     Route::resource('/registrations', RegistrationController::class);
     Route::resource('/persons', PersonController::class);
+
+    Route::post('/districts-enable-disable/{id}', [DistrictController::class, 'enableDisable'])->name('districts-enable-disable');
+    Route::post('/upazilas-enable-disable/{id}', [UpazilaController::class, 'enableDisable'])->name('upazilas-enable-disable');
+    Route::post('/vaccines-enable-disable/{id}', [VaccineController::class, 'enableDisable'])->name('vaccines-enable-disable');
 });
 
 require __DIR__.'/auth.php';

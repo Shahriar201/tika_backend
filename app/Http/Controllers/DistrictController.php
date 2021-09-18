@@ -78,4 +78,12 @@ class DistrictController extends Controller
     {
         //
     }
+
+    public function enableDisable($id){
+        $district = District::findOrFail($id);
+        $district->enabled = !$district->enabled;
+        $district->save();
+
+        return redirect()->route('$districts.index')->with('message', $district->name. ' District updated');
+    }
 }

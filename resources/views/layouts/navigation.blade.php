@@ -21,27 +21,22 @@
                     </x-nav-link>
                     
                     <x-nav-link :href="route('divisions.index')" :active="request()->routeIs('divisions.index')">
-                        {{ __('Divisions') }}
                         {{ __('Locations') }}
                     </x-nav-link>
-                    
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
-                        {{ __('Categories') }}
-                    </x-nav-link>
-                    
+
                     <x-nav-link :href="route('persons.index')" :active="request()->routeIs('persons.index')">
                         {{ __('People') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
+                    <x-nav-link :href="route('vaccines.index')" :active="request()->routeIs('vaccines.index')">
                         {{ __('Vaccines') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
+                    <x-nav-link :href="route('vaccination-centers.index')" :active="request()->routeIs('vaccination-centers.index')">
                         {{ __('Vaccination Centers') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
+                    <x-nav-link :href="route('registrations.index')" :active="request()->routeIs('registrations.index')">
                         {{ __('Registrations') }}
                     </x-nav-link>
                     

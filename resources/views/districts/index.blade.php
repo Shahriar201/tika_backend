@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Divisions') }}
+            {{ __('Districts') }}
         </h2>
     </x-slot>
 
@@ -22,17 +22,17 @@
                             <th class="border-l border-t px-2 py-1 text-center">Actions</th>
                         </tr>
 
-                        @foreach($divisions as $division)
+                        @foreach($districts as $district)
                         <tr>
                             <td class="border-l border-t px-2 py-1 text-left">
-                                @if($division->enabled == 0) <del> @endif
-                                {{$division->name}}
-                                @if($division->enabled == 0) </del> @endif
+                                @if($district->enabled == 0) <del> @endif
+                                {{$district->name}}
+                                @if($district->enabled == 0) </del> @endif
                             </td>
                             <td class="border-l border-t px-2 py-1 text-center">
-                                <a class="inline-block" href="{{route('divisions.edit', $division->id)}}">Edit</a>
-                                <form action="{{route('divisions-enable-disable', $division->id)}}" method="POST" class="inline-block"> @csrf
-                                    <button type="submit">{{$division->enabled == 0 ? 'Restore' : 'Archive'}}</button>
+                                <a class="inline-block" href="{{route('districts.edit', $district->id)}}">Edit</a>
+                                <form action="{{route('districts-enable-disable', $district->id)}}" method="POST" class="inline-block"> @csrf
+                                    <button type="submit">{{$district->enabled == 0 ? 'Restore' : 'Archive'}}</button>
                                 </form>
                             </td>
                         </tr>

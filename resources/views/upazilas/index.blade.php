@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Divisions') }}
+            {{ __('Upazilas') }}
         </h2>
     </x-slot>
 
@@ -22,17 +22,17 @@
                             <th class="border-l border-t px-2 py-1 text-center">Actions</th>
                         </tr>
 
-                        @foreach($divisions as $division)
+                        @foreach($upazilas as $upazila)
                         <tr>
                             <td class="border-l border-t px-2 py-1 text-left">
-                                @if($division->enabled == 0) <del> @endif
-                                {{$division->name}}
-                                @if($division->enabled == 0) </del> @endif
+                                @if($upazila->enabled == 0) <del> @endif
+                                {{$upazila->name}}
+                                @if($upazila->enabled == 0) </del> @endif
                             </td>
                             <td class="border-l border-t px-2 py-1 text-center">
-                                <a class="inline-block" href="{{route('divisions.edit', $division->id)}}">Edit</a>
-                                <form action="{{route('divisions-enable-disable', $division->id)}}" method="POST" class="inline-block"> @csrf
-                                    <button type="submit">{{$division->enabled == 0 ? 'Restore' : 'Archive'}}</button>
+                                <a class="inline-block" href="{{route('upazilas.edit', $upazila->id)}}">Edit</a>
+                                <form action="{{route('upazilas-enable-disable', $upazila->id)}}" method="POST" class="inline-block"> @csrf
+                                    <button type="submit">{{$upazila->enabled == 0 ? 'Restore' : 'Archive'}}</button>
                                 </form>
                             </td>
                         </tr>

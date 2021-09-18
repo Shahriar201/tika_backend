@@ -78,4 +78,12 @@ class VaccineController extends Controller
     {
         //
     }
+
+    public function enableDisable($id){
+        $vaccine = Vaccine::findOrFail($id);
+        $vaccine->enabled = !$vaccine->enabled;
+        $vaccine->save();
+
+        return redirect()->route('vaccines.index')->with('message', $vaccine->name. ' Vaccine updated');
+    }
 }

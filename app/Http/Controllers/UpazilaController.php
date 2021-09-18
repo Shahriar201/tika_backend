@@ -78,4 +78,12 @@ class UpazilaController extends Controller
     {
         //
     }
+
+    public function enableDisable($id){
+        $upazila = Upazila::findOrFail($id);
+        $upazila->enabled = !$upazila->enabled;
+        $upazila->save();
+
+        return redirect()->route('upazilas.index')->with('message', $upazila->name. ' Upazila updated');
+    }
 }

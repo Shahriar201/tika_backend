@@ -54,7 +54,7 @@ class DivisionController extends Controller
      */
     public function edit(Division $division)
     {
-        //
+        return view('divisions.edit', ['division' => $division]);
     }
 
     /**
@@ -66,7 +66,14 @@ class DivisionController extends Controller
      */
     public function update(Request $request, Division $division)
     {
-        //
+        $request->validate([
+            'name' => 'required'
+        ]);
+
+        $division->name = $request->name;
+        $division->save();
+
+        return redirect(route('divisions.index'))->with(['message' => $division->name . ' is updated.']);
     }
 
     /**

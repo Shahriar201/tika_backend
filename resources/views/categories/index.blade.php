@@ -24,7 +24,7 @@
                         @foreach ($categories as $category)
                             <tr>
                                 <td class="border-l border-t px-2 py-1 text-left">{{ $category->name }}</td>
-                                <td class="border-l border-t px-2 py-1 text-center">{{ $category->age }}</td>
+                                <td class="border-l border-t px-2 py-1 text-center">{{ $category->min_age }}</td>
                                 <td class="border-l border-t px-2 py-1 text-center">
                                     <a href="{{ route('categories.edit', $category->id) }}">Edit</a>
                                 </td>
