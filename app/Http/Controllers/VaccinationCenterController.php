@@ -9,7 +9,7 @@ class VaccinationCenterController extends Controller
 {
     public function index()
     {
-        $vaccinationCenters = VaccinationCenter::paginate();
+        $vaccinationCenters = Vaccination_Center::paginate();
         return view('vaccination-centers.index', ['vaccinationCenters' => $vaccinationCenters]);
     }
 
